@@ -67,7 +67,7 @@ printf("hello world!\n");
 链接:[我的个人博客](jihoonli.github.io)
 ***
 图片插入测试  
-![caption](test.PNG)
+![caption](./test.PNG)
 ***
 表格  
 |  表头   | 表头  |
