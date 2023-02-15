@@ -1,0 +1,36 @@
+备注：在git下实现ctrl+v，右边shift+insert
+
+1.git clone + 地址 : 克隆仓库到本地
+git clone https://github.com/jihoonli/study_notes.github.io.git
+
+2.git lfs clone + 地址 :克隆仓库到本地,同时保证比较大的文件也可以克隆下来
+
+3.克隆完仓库后，切换到代码目录
+cd study_notes.github.io/
+4.提交修改的文件
+	1. git status 可以查看当前仓库修改情况
+	2. git add 将新增的1.c文件添加到master上被追踪(一般有新增文件使用这个)
+	3. git commit -m "xxxxxx"  将这次修改的关键信息写入
+	4. 提交修改信息时，如果未配置账户密码，首次需要设置 
+		git config --global user.email "linux_gcc_jihoon@163.com"
+		git config --global user.name "lijihong"
+		git config -l 列出当前git的所有配置信息
+	5. git log 列出所有提交节点，查看是否有本次提交 tips:git log -n 只看n条记录
+	6. git push 将本次提交 推送到远端仓库
+5. 进阶命令
+	1. git diff + 文件命，查看修改内容(Beyond Compare工具更直观，需要自己配置)
+		git diff 1.c
+	2. 修改了某个文件 一条命令实现 git add 和 git commit -m 效果
+		git commit -am "xxxxxxxxx"
+	3. git rm 2.c.txt 删除文件，然后使用git commit -am "xxxx" 记录删除
+	4. 删除误提交
+		git log 查看提交记录，找到上次正确提交的 commit哈希值(0a034af871aeb6aafde320aa58af9156b850aec3)
+		git reset 0a034af871aeb6aafde320aa58af9156b850aec3 把误提交解除提交状态----------此时git status查看文件又变回成未提交状态
+		git checkout+文件，回退文件修改
+		git push -f 强制将远端分支状态与本地仓库同步 (慎用)
+	5. 将本地更新与远端同步 git pull origin master
+	6. git checkout -b master_ljh_0215 拉个人分支
+	7. git checkout master 切换分支
+	8. git push --set-upstream origin master_ljh_0215 将个人分支提交到远端
+	9. 一般工作，在个人分支上进行，修改完毕后，提交MR(merge request)至master,具体怎么合并，问同事
+	10. git push的时候遇到冲突，百度解决方法，保证本地修改比远端更新
