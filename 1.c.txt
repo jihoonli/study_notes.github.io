@@ -1,5 +1,10 @@
 #include <stdio.h>
 
+void func()
+{
+	printf("hello world!\n");
+}
+
 int main()
 {
 	int a = 1;
@@ -8,3 +13,4 @@ int main()
 	
 	return c;
 }
+
