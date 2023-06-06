@@ -1,0 +1,20 @@
+26.删除有序数组中的重复项
+	1.创建快慢指针slow和fast
+	2.fast遇到重复元素跳过，直到nums[slow]!=nums[fast]
+	3.slow++，nums[slow] = nums[fast]
+	4.返回长度，slow+1
+
+83.删除排序链表中的重复元素
+	原理26
+
+27.移除元素
+	双指针，当nums[fast]!=val的时候，更新nums[slow]，然后slow++，最后返回slow
+	
+283.移动零
+	双指针，当nums[fast]!=0的时候，更新nums[slow]，最后将slow后面的元素使用memset清零
+	
+167.两数之和II-输入有序数组
+	首尾指针，分别往中间遍历，直到遇见numbers[left] + numbers[right]) == target，返回[left,right]
+
+344.反转字符串
+	首尾指针，不断交换两个指针指向的值

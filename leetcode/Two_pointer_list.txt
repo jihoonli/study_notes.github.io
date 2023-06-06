@@ -18,3 +18,25 @@
 	2.创建两个指针指向dummy，先让p1跑n+1次
 	3.再遍历p1直到NULL，同时p2从dummy开始遍历
 	4.这时p2就指向了要删除节点的前一个节点，p2->next=p2->next->next，就删掉了第n个节点
+
+876.链表的中间节点
+	1.创建2个指针slow和fast
+	2.slow=slow->next,fast=fast->next->next
+	3.当fast为NULL的，时候，slow指向的节点就是中间节点
+
+141.环形链表
+	1.创建2个指针slow和fast
+	2.slow=slow->next,fast=fast->next->next
+	3.当slow==fast的时候，链表有环
+
+142.环形链表II
+	1.创建2个指针slow和fast
+	2.slow=slow->next,fast=fast->next->next
+	3.当slow==fast的时候，slow指向head
+	4.slow=slow->next,fast=fast->next
+	5.当slow=fast的时候，就是环形链表的第一个节点，return slow
+
+160.相交链表
+	1.p1 p2同时遍历对应链表
+	2.各自遍历到链表尾的时候，p1指向l2，p2指向l1
+	3.最后返回p1,如果没有相交，返回的是NULL
